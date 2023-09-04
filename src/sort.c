@@ -83,7 +83,10 @@ int main(int argc, char **argv) {
         char input[MAX_ELEMENTS][MAX_STRLEN + 1];
         int array_size = 0;
         while (!feof(fp)) {
-            fgets(input[array_size++], MAX_STRLEN + 1, fp);
+            if(!fgets(input[array_size++], MAX_STRLEN + 1, fp)) {
+                fprintf(stderr, "Error: Cannot read from '%s'. %s.\n", filename, strerror(errno));
+                exit(EXIT_FAILURE);
+            }
         }
         array_size--;
         quicksort(input, array_size, MAX_STRLEN + 1, str_cmp);
@@ -93,7 +96,10 @@ int main(int argc, char **argv) {
         int array_size = 0;
         char buf[MAX_STRLEN + 1];
         while (!feof(fp)) {
-            fgets(buf, MAX_STRLEN + 1, fp);
+            if(!fgets(buf, MAX_STRLEN + 1, fp)) {                
+                fprintf(stderr, "Error: Cannot read from '%s'. %s.\n", filename, strerror(errno));
+                exit(EXIT_FAILURE);
+            }
             input[array_size++] = atoi(buf);
         }
         array_size--;
@@ -104,7 +110,10 @@ int main(int argc, char **argv) {
         int array_size = 0;
         char buf[MAX_STRLEN + 1];
         while (!feof(fp)) {
-            fgets(buf, MAX_STRLEN + 1, fp);
+            if(!fgets(buf, MAX_STRLEN + 1, fp)) {                
+                fprintf(stderr, "Error: Cannot read from '%s'. %s.\n", filename, strerror(errno));
+                exit(EXIT_FAILURE);
+            }
             input[array_size++] = atof(buf);
         }
         array_size--;

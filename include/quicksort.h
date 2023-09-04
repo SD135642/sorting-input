@@ -1,7 +1,7 @@
-static void swap(void *a, void *b, size_t size);
-static int lomuto(void *array, int left, int right, size_t elem_sz,
+void swap(void *a, void *b, size_t size);
+int lomuto(void *array, int left, int right, size_t elem_sz,
                     int (*cmp)(const void*, const void*));
-static void quicksort_helper(void *array, int left, int right, size_t elem_sz,
+void quicksort_helper(void *array, int left, int right, size_t elem_sz,
                                 int (*cmp)(const void*, const void*));
 
 int int_cmp(const void *a, const void *b);
