@@ -32,6 +32,16 @@ This program is designed to work in a Linux environment. To build, run the comma
 
     This program is a dependency of sort.c and is compiled and ran at the same time.
 
-Additional Notes
+### Notes
 
     If no file is provided, the program expects input from stdin.
+
+### Author
+
+Aleksandra Dubrovina
+
+### Contact
+
+For inquiries or feedback, please contact aleks.dubrovina@gmail.com.
+
+
